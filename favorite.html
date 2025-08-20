@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UV-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favorites</title>
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.xyz/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="bg-primary text-white" style="height: 80px">
+      <div class="container h-100">
+        <div class="header-content d-flex align-items-center justify-content-between h-100">
+          <!-- Logo Left & Rounded -->
+          <a href="index.html" class="brand d-inline-flex align-items-center">
+            <img
+              src="images/14603825_5484736.jpg"
+              alt="Logo"
+              id="logo-image"
+              width="60"
+              height="60"
+              style="border-radius: 10%; object-fit: cover; border: 3px solid #fff; background: #fff;"
+            />
+          </a>
+          <!-- Navigation Right -->
+          <nav class="d-flex align-items-center navbar navbar-expand-lg navbar-light p-0 m-0" style="flex:1; justify-content: flex-end;">
+            <ul id="personalInfo" class="person-info-container">
+              <li>
+                <a href="cartProudcts.html" title="Cart"><i class="fas fa-shopping-cart"></i></a>
+                <span class="badge" id="cartCount">0</span>
+              </li>
+              <li>
+                <a href="favorite.html" title="Favorites"><i class="far fa-heart"></i></a>
+              </li>
+              <li>
+                <span id="user"></span>
+              </li>
+              <li>
+                <button id="logOut" class="btn btn-sm btn-danger">Logout</button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="bg-light pt-4">
+      <section class="container pt-5">
+        <div class="d-flex align-items-center justify-content-between">
+          <div>
+            <h2 class="text-primary">Your Favorites</h2>
+            <p class="text-secondary">Products you've added to your favorites list</p>
+          </div>
+          <a href="index.html" class="btn btn-outline-primary">Continue Shopping</a>
+        </div>
+
+        <div id="favoritesEmpty" class="text-center py-5" style="display:none;">
+          <i class="far fa-heart" style="font-size: 64px; color: #764ba2;"></i>
+          <h4 class="mt-3">Your favorites list is empty</h4>
+          <p class="text-secondary">Browse products and add the ones you love</p>
+          <a href="index.html" class="btn btn-primary">Browse Products</a>
+        </div>
+
+        <div class="products row" id="favoritesList"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.xyz/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.xyz/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.xyz/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/favorites.js"></script>
+    <script src="js/user.js"></script>
+  </body>
+  </html>
+
+

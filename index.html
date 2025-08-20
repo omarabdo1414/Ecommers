@@ -50,12 +50,12 @@
           <!-- Navigation Right -->
           <nav class="d-flex align-items-center navbar navbar-expand-lg navbar-light p-0 m-0" style="flex:1; justify-content: flex-end;">
             <ul id="links" class="mt-3 d-flex align-items-center mb-0 mr-3" style="list-style:none; gap: 15px;">
-              <li><a href="login.html" class="text-white">Login</a></li>
-              <li><a href="register.html" class="text-white-second">Create New Account</a></li>
+              <li><a href="login.html" class="text-white" id="loginButton">Login</a></li>
+              <li><a href="register.html" class="text-white-second" id="registerButton">Create New Account</a></li>
             </ul>
             <ul id="personalInfo" class="person-info-container">
               <li>
-                <a href="cartProudcts.html" title="Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a href="cartProudcts.html" title="Cart" class="shoppingCart"><i class="fas fa-shopping-cart"></i></a>
                 <span class="badge" id="cartCount">0</span>
               </li>
               <li>
@@ -65,7 +65,7 @@
                 <span id="user"></span>
               </li>
               <li>
-                <button id="logOut" class="btn btn-sm btn-danger">Logout</button>
+                <button id="logOut" class="btn btn-sm btn-danger" onclick="logOut()">Logout</button>
               </li>
             </ul>
           </nav>
@@ -130,20 +130,15 @@
         </div>
       </div>
     </div>
-
-    <!-- Shopping Cart Dropdown -->
-    <div class="shoppingCart">
-      <a href="#">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="badge"></span>
-      </a>
-      <div class="cartsProudect" style="display: none;">
+    <!-- ---------------------------------------------- -->
+    <!-- Cart Dropdown -->
+    <div class="cartsProudect" style="display: none; position: fixed; top: 100px; right: 20px; background: white; border: 1px solid #ccc; border-radius: 5px; padding: 15px; z-index: 1000; min-width: 300px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h5 class="mb-3">Shopping Cart</h5>
         <div class="buyProudect"></div>
-        <div class="total d-flex justify-content-center border-bottom mb-4 pt-2 pb-4" style="font-size: 20px">
-          <h5 class="totalTitle mr-3">Total</h5>
-          <div class="totalPrice mr-2">0 EGP</div>
+        <div class="total d-flex justify-content-between align-items-center mt-3 pt-3 border-top">
+            <h6 class="mb-0">Total:</h6>
+            <div class="totalPrice">0 EGP</div>
         </div>
-      </div>
     </div>
 
     <!-- ---------------------------------------------- -->

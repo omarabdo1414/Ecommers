@@ -41,10 +41,26 @@ let products = [
     { id: 18, title: "Galaxy Z Fold5", category: "phone", color: "	Light blue", price: "73930", salePrice: "66000", imageURL: "images/phone7.jpg" },
 ];
 
+// Expose products for other pages and persist a copy for favorites page
+try {
+    window.products = products;
+    localStorage.setItem('allProductsData', JSON.stringify(products));
+} catch (e) {}
+
 // Helper function to check if user is logged in
 function isUserLoggedIn() {
     const currentUser = localStorage.getItem('currentUser');
     return currentUser !== null;
+}
+
+if (isUserLoggedIn()) {
+    const LoginButton = document.querySelector("#loginButton");
+    const RegisterButton = document.querySelector("#registerButton");
+    LoginButton.style.display = "none";
+    RegisterButton.style.display = "none";
+} else {
+    const LoginButton = document.querySelector("#loginButton");
+    LoginButton.style.display = "block";
 }
 
 // This function draws the product data on the page by mapping the products array
@@ -87,7 +103,7 @@ drawData();
 
 // -------------------------------------------------------------------------------------------------------------
 
-let badge = document.querySelector(".badge");
+let badge = document.querySelector("#cartCount");
 let buyProudect = document.querySelector(".buyProudect");
 let totalPrice = document.querySelector(".total .totalPrice");
 let shoppingCartIcon = document.querySelector(".shoppingCart");
